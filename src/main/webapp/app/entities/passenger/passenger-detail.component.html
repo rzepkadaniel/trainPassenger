@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="passenger">
+            <h2><span jhiTranslate="trainPassengerApp.passenger.detail.title">Passenger</span> {{ passenger.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="trainPassengerApp.passenger.name">Name</span></dt>
+                <dd>
+                    <span>{{ passenger.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="trainPassengerApp.passenger.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ passenger.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="trainPassengerApp.passenger.cardId">Card Id</span></dt>
+                <dd>
+                    <span>{{ passenger.cardId }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/passenger', passenger.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

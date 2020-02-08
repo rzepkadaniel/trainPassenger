@@ -1,0 +1,25 @@
+{
+  "trainPassengerApp": {
+    "passenger": {
+      "home": {
+        "title": "Passenger",
+        "createLabel": "Dodaj Passenger",
+        "createOrEditLabel": "Dodaj lub edytuj: Passenger",
+        "notFound": "No Passengers found"
+      },
+      "created": "Utworzono nowy obiekt typu Passenger z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Passenger z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Passenger z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Passenger {{ id }}?"
+      },
+      "detail": {
+        "title": "Passenger"
+      },
+      "name": "Name",
+      "lastName": "Last Name",
+      "cardId": "Card Id",
+      "train": "Train"
+    }
+  }
+}

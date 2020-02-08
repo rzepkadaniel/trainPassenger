@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="train">
+            <h2><span jhiTranslate="trainPassengerApp.train.detail.title">Train</span> {{ train.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="trainPassengerApp.train.model">Model</span></dt>
+                <dd>
+                    <span>{{ train.model }}</span>
+                </dd>
+                <dt><span jhiTranslate="trainPassengerApp.train.name">Name</span></dt>
+                <dd>
+                    <span>{{ train.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="trainPassengerApp.train.connection">Connection</span></dt>
+                <dd>
+                    <span>{{ train.connection }}</span>
+                </dd>
+                <dt><span jhiTranslate="trainPassengerApp.train.passenger">Passenger</span></dt>
+                <dd>
+                    <span *ngFor="let passenger of train.passengers; let last = last">
+                        <a [routerLink]="['/passenger', passenger?.id, 'view']">{{ passenger.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/train', train.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
