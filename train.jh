@@ -1,0 +1,16 @@
+// Passenger (*) <-----> (*) Train
+// A many-to-many relationship
+// A Passenger can travel by many trains, but a train can also have many passengers.
+entity Passenger {
+	name String,
+    lastName String,
+    CardId Integer
+}
+entity Train {
+	model String,
+    name String,
+    connection String
+}
+relationship ManyToMany {
+  Train{passenger} to Passenger{train}
+}
